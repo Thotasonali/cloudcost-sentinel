@@ -12,6 +12,7 @@ public class WebConfig implements WebMvcConfigurer {
         registry.addMapping("/api/**")
                 .allowedOriginPatterns(
                         "http://localhost:5173",
+                        "https://cloudcost-sentinel-dashboard.onrender.com",
                         "https://*.onrender.com",
                         "https://*.vercel.app"
                 )
