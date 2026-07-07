@@ -1,0 +1,57 @@
+### Health check
+GET http://localhost:8080/actuator/health
+
+### Create dev user
+POST http://localhost:8080/api/dev/users
+Content-Type: application/json
+
+{
+  "name": "Sonali",
+  "email": "sonali@example.com",
+  "password": "test123"
+}
+
+### Get all users
+GET http://localhost:8080/api/dev/users
+
+### Add EC2 billing record
+POST http://localhost:8080/api/billing
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "usageDate": "2026-07-01",
+  "service": "EC2",
+  "resourceId": "i-12345",
+  "region": "us-east-1",
+  "cost": 12.50,
+  "usageHours": 24,
+  "cpuUtilization": 3.2
+}
+
+### Add RDS billing record
+POST http://localhost:8080/api/billing
+Content-Type: application/json
+
+{
+  "userId": 1,
+  "usageDate": "2026-07-01",
+  "service": "RDS",
+  "resourceId": "db-prod-1",
+  "region": "us-east-1",
+  "cost": 35.80,
+  "usageHours": 24,
+  "cpuUtilization": 4.1
+}
+
+### Get billing records
+GET http://localhost:8080/api/billing?userId=1
+
+### Get total cost
+GET http://localhost:8080/api/billing/total?userId=1
+
+### Get cost by service
+GET http://localhost:8080/api/billing/cost-by-service?userId=1
+
+### Get idle resources
+GET http://localhost:8080/api/billing/idle?userId=1

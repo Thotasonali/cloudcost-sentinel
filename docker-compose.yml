@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: cloudcost-postgres
+    environment:
+      POSTGRES_DB: cloudcost_db
+      POSTGRES_USER: cloudcost_user
+      POSTGRES_PASSWORD: cloudcost_pass
+    ports:
+      - "5433:5432"
+    volumes:
+      - cloudcost_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cloudcost_user -d cloudcost_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  cloudcost_postgres_data:

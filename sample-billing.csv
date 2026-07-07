@@ -1,0 +1,6 @@
+usageDate,service,resourceId,region,cost,usageHours,cpuUtilization
+2026-07-01,EC2,i-12345,us-east-1,12.50,24,3.2
+2026-07-01,RDS,db-prod-1,us-east-1,35.80,24,4.1
+2026-07-02,S3,bucket-logs,us-east-1,5.25,24,0.0
+2026-07-02,Lambda,function-image-processor,us-east-1,2.10,3,12.5
+2026-07-03,EC2,i-67890,us-west-2,18.75,48,2.1
