@@ -3,9 +3,9 @@ spring:
     name: cloudcost-sentinel
 
   datasource:
-    url: jdbc:postgresql://localhost:5433/cloudcost_db
-    username: cloudcost_user
-    password: cloudcost_pass
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5433/cloudcost_db}
+    username: ${DATABASE_USERNAME:cloudcost_user}
+    password: ${DATABASE_PASSWORD:cloudcost_pass}
 
   jpa:
     hibernate:
@@ -16,7 +16,7 @@ spring:
         format_sql: true
 
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 management:
   endpoints:
