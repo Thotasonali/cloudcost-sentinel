@@ -13,8 +13,7 @@ public class WebConfig implements WebMvcConfigurer {
                 .allowedOriginPatterns(
                         "http://localhost:5173",
                         "https://cloudcost-sentinel-dashboard.onrender.com",
-                        "https://*.onrender.com",
-                        "https://*.vercel.app"
+                        "https://*.onrender.com"
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*");
